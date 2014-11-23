@@ -1,4 +1,15 @@
 <?php
+if($_SERVER['REQUEST_METHOD'] == $_GET) {
+    $eventname = $_GET['name'];
+    $id = $_GET['id'];
+    $city = $_GET['city'];
+    $state = $_GET['state'];
+    $zip= $_GET['zip'];
+    $start_date = $_GET['start'];
+    $end_date = $_GET['end'];
+    $max_tickets = $_GET['max'];
+    $ticket_price = $_GET['price'];
+}
 
 ?>
 
@@ -47,32 +58,10 @@
     </row>
     </div>
   }
-  elseif($array=="empty"){
-    return "There are no events that match your query"
+  else {
+
   }
-  else{
-    <div class="bs-docs-example">
-        <table class="table table-bordered">
-           <thead>
-              <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-              </tr>
-            </thead>
-          <tbody>
-          foreach ($val in $array) {
-            $i++;
-            if (i==3||i==4||i==6||i==7)
-              continue;
-            echo <tr><td>$val[i]</td></tr>
-          }
-          </tbody>
-      </table>
-    </div>
-  }
-  
+  ?>
               
  <div class="container">
   <row>

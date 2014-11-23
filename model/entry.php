@@ -22,18 +22,19 @@ class entry {
 
         $db = new db();
         $q = $db->query("SELECT amount,ticket_id FROM entry ORDER BY entry_id DESC LIMIT 1");
-        $this->winningnum = $q[0] + q[1];
+        $this->winningnum = $q[0] + $q[1];
 
         $ar = array (
           $name,$email, $eid, $numtics, $this-> winningnum
         );
-        $db->insert($array, "entry");
-        $this->confirm_mail();
+        $db->insert($ar, "entry");
+        $this->confirm_mail($db);
     }
-    public function confirm_mail() {
-        $message = "";
-        $subject = "You Got ".$this->numtics." For ";
-        mail($this->email, );
+    public function confirm_mail($db) {
+        $message = "Thanks for your efforts in helping our fundraiser!";
+        $subject = "You Got ".$this->numtics." raffle tickets. ";
+        $headers = "From: ". $db->query("SELECT name FROM event WHERE id=$this->eid ") . "\r\n";
+        mail($this->email, $subject, $message, $headers );
 
 
     }
