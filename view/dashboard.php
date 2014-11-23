@@ -58,6 +58,16 @@ if($_SERVER['REQUEST_METHOD'] == $_GET) {
     </row>
     </div>
   }
+  else {
+
+      echo"
+      <form method='post' action='../controller/venmo.controller.php'>
+      <input type="hidden" name='id' value='$id' />
+        
+      <input type="submit" name="submit"/>
+
+      </form>;"}
+
 ?>
               
  <div class="container">
