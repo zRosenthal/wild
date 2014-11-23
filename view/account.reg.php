@@ -30,7 +30,7 @@
     </nav>
   	<h1 class="text-center"><b>Create Your Account</b></h1>
 	
-	<form class="form-horizontal" action="register.php" method="post">
+	<form class="form-horizontal" action="../controller/account.controller.php" method="post">
 
             <br/>
             <div class="row">
