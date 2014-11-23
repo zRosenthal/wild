@@ -5,8 +5,10 @@
 <html>
 	<head>
     	<title>RAFFLE</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script text="type/javascript" src="../inc/account_validate.js" charset="utf-8"></script>
   	</head>
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
@@ -29,8 +31,8 @@
       </div>
     </nav>
   	<h1 class="text-center"><b>Create Your Account</b></h1>
-	
-	<form class="form-horizontal" action="register.php" method="post">
+
+	<form class="form-horizontal" id="account_registration" action="register.php" method="post">
 
             <br/>
             <div class="row">
@@ -41,14 +43,17 @@
               <div class="form-group center-block">
                 <label class="col-sm-2 col-sm-offset-3 control-label">Name</label>
                 <div class="col-sm-3">
-                  <input type="text" name="name" value="" class="form-control" id="inputEmail3" placeholder="Nick Cage">
+                  <input type="text" name="name" value="" class="form-control" id="account_name" placeholder="Nick Cage">
+                  <span id="account_name_error" class="error">Please enter your name.</span>
                 </div>
               </div>
 
               <div class="form-group center-block">
                 <label class="col-sm-2 col-sm-offset-3 control-label">Email</label>
                 <div class="col-sm-3">
-                  <input type="text" name="email" value="" class="form-control" id="email" placeholder="NickNack@nick.cage">
+                  <input type="text" name="email" value="" class="form-control" id="account_email" placeholder="NickNack@nick.cage">
+                  <span id="account_email_error" class="error">Please enter your email address.</span>
+                  <span id="account_invalid_email_error" class="error">Please enter a valid email address.</span>
                 </div>
               </div>
 
@@ -56,7 +61,10 @@
               <div class="form-group center-block">
                 <label class="col-sm-2 col-sm-offset-3 control-label">Password</label>
                 <div class="col-sm-3">
-                  <input type="password" class="form-control" id="inputPassword" name="password" value="" placeholder="***********"/>
+                  <input type="password" class="form-control" id="inputPassword" name="password1" value="" placeholder="***********"/>
+                  <span id="password_error" class="error">Please enter both password fields.</span>
+                  <span id="password_equal_error" class="error">Your passwords did not match.</span>
+                  <span id="password_strength_error" class="error">Your password must have at least one number.</span>
                 </div>
               </div>
 
@@ -64,7 +72,7 @@
               <div class="form-group center-block">
                 <label  class="col-sm-2 col-sm-offset-3 control-label">Password (confirm)</label>
                 <div class="col-sm-3">
-                  <input type="password" class="form-control" id="inputPassword" name="password-confirm" value="" placeholder="***********"/>
+                  <input type="password" class="form-control" id="inputPassword" name="password2" value="" placeholder="***********"/>
                 </div>
               </div>
             </div>
