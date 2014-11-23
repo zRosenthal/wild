@@ -33,25 +33,47 @@
 <body>
   <?php
   if($login){
-    echo
-    <div class="container">
-      <row>
-        <form role="form">
-          <div class="col-sm-3 col-sm-offset-4 form-group">
-            <label for="Select">Your Fundraising Events</label>
-            <select id="Select" class="form-control">
-              <option>Select</option>
-            </select>
-          </div>
-        </form>
-      <div class="col-sm-offset-5"></div>
-      </row>
+    echo <div class="container">
+    <row>
+      <form role="form">
+        <div class="col-sm-3 col-sm-offset-4 form-group">
+        <label for="Select">Your Fundraising Events</label>
+        <select id="Select" class="form-control">
+          <option>Select</option>
+        </select>
+        </div>
+      </form>
+    <div class="col-sm-offset-5"></div>
+    </row>
     </div>
   }
-  else{
-    echo $e_name
+  elseif($array=="empty"){
+    return "There are no events that match your query"
   }
-
+  else{
+    <div class="bs-docs-example">
+        <table class="table table-bordered">
+           <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+          <tbody>
+          foreach ($val in $array) {
+            $i++;
+            if (i==3||i==4||i==6||i==7)
+              continue;
+            echo <tr><td>$val[i]</td></tr>
+          }
+          </tbody>
+      </table>
+    </div>
+  }
+  
+              
  <div class="container">
   <row>
     <h2 class="col-sm-offset-4">Tickets Sold: <span><?php echo $ticketssold;?></span></h2>
