@@ -1,6 +1,8 @@
 $(function () {
   $(".error").hide();
 
+  console.log("hi");
+
   $("#account_registration").submit(function () {
     var $name, $email, $pw1, $pw2;
 

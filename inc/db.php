@@ -16,8 +16,8 @@ class db {
   public function __construct() {
     $this->db_host = 'localhost';
     $this->db_name = 'zeeechco_fiftyfifty';
-    $this->db_user = 'zeeechco_hack';
-    $this->db_pass = 'wildhacks5050';
+    $this->db_user = 'user';
+    $this->db_pass = 'test';
     $this->dbc = $this->connect();
   }
 
@@ -55,7 +55,7 @@ class db {
 
     if($r) {
       echo "Success!<br />";
-      return mysqli_insert_id();
+      return mysqli_insert_id($this->dbc);
     } else {
       echo "Insert failed...<br />";
       return null;
