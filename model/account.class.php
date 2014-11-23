@@ -9,14 +9,14 @@ $this->name = $name;
 $this->email = $email;
 $this->payment_type = $payment_type;
 }
-public function insert($hash) {
+public function save($hash) {
 $db = new db();
 $data = array();
 $data[] = $this->name;
 $data[] = $this->email;
 $data[] = $this->payment_type;
 $data[] = $hash;
-$db->insert($data);
+$db->insert($data,"account");
 }
 // GETTERS AND SETTERS
 public function getName() {
