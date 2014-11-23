@@ -47,31 +47,7 @@
     </row>
     </div>
   }
-  elseif($array=="empty"){
-    return "There are no events that match your query"
-  }
-  else{
-    <div class="bs-docs-example">
-        <table class="table table-bordered">
-           <thead>
-              <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-              </tr>
-            </thead>
-          <tbody>
-          foreach ($val in $array) {
-            $i++;
-            if (i==3||i==4||i==6||i==7)
-              continue;
-            echo <tr><td>$val[i]</td></tr>
-          }
-          </tbody>
-      </table>
-    </div>
-  }
+  
   
               
  <div class="container">
