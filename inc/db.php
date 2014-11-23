@@ -55,7 +55,7 @@ class db {
 
     if($r) {
       echo "Success!<br />";
-      return mysqli_insert_id();
+      return mysqli_insert_id($this->dbc);
     } else {
       echo "Insert failed...<br />";
       return null;
