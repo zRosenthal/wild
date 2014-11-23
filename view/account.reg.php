@@ -87,7 +87,7 @@
               <div class="col-sm-6 col-sm-offset-5 control-group">
                 <div class="controls">
                   <br/>
-                  <a href="events.reg.php" class="btn btn-primary btn-lg active" role="button">Create Account</a>
+                  <button class="btn btn-primary btn-lg active" role="button">Create Account</button>
                 </div>
               </div>
             </div>
