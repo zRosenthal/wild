@@ -1,11 +1,17 @@
 <?php
+if($_SERVER['REQUEST_METHOD']=="POST"){
+  require_once('../inc/db.php');
+  $db = new $db();
+  $array = ($db->search($_POST['search']));
+  }
+
 
 ?>
 
 <html lang="en">
   <head>
-          <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,10 +56,40 @@
       <form class="form-search">
         <div class="input-append">
           <label  class="col-sm-2 col-sm-offset-3 control-label">Search 50/50 Events</label>
-          <input type="text" class="span2 search-query">
+          <input type="text" class="span2 search-query" name="search">
           <button type="submit" class="btn">Search</button>
         </div>
-      </form>
+          <?php 
+          if($_SERVER['REQUEST_METHOD']=="POST"){
+            if($array=="empty"){
+              echo "There are no events that match your query";
+            }
+            else{
+              echo
+              "<div class='bs-docs-example'>
+              <table class='table table-bordered'>
+              <thead>
+              <tr>
+                <th>Event Name</th>
+                <th>City</th>
+                <th>Start Date</th>
+                <th>Ticket Price</th>
+              </tr>
+            </thead>
+            <tbody>";
+            foreach ($array as $val) {
+              $i++;
+              if (i==3||i==4||i==6||i==7){
+                continue;
+              }
+              echo "<tr><td>$val[i]</td></tr>";
+            }
+         echo" </tbody>
+          </table>
+        </div>";
+        }
+      } ?>
+    </form>
 
 
       <img src="NICCAGE.jpg" class="img-responsive" alt="Cinque Terre">

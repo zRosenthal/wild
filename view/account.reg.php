@@ -97,7 +97,9 @@
               <div class="col-sm-6 col-sm-offset-5 control-group">
                 <div class="controls">
                   <br/>
+
                   <input type="submit" class="btn btn-primary btn-lg active" value="Create Account" role="button" />
+
                 </div>
               </div>
             </div>

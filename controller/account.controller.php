@@ -6,13 +6,15 @@
  * Time: 6:44 AM
  */
 
-require_once('../model/events.class.php');
+require_once('../model/account.class.php');
+require_once('../inc/db.php');
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['password'] == $_POST['password-confirm']) {
+if($_SERVER['REQUEST_METHOD'] == "POST") {
     echo "bout to creat accout";
-    $ac = new account($_POST['name'], $_POST['email'],$_POST['pay']);
+    $ac = new account($_POST['name'], $_POST['email'],"venmo");
     echo "done <br />";
     $ac->save(md5($_POST['password']));
     echo "save <br />";
-    //header("Location: events.reg.php");
+
+      header("Location: ../view/events.reg.php");
 }
