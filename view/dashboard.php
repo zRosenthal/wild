@@ -17,7 +17,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">✓</a>
+      <a class="navbar-brand" href="#">&#x2713</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -31,19 +31,26 @@
 </nav>
 
 <body>
-  
-  <form role="form">
-    <div class="col-sm-4 col-sm-offset-7 form-group">
-      <label for="Select">Your Fundraising Events</label>
-      <select id="Select" class="form-control">
-        <option>Select</option>
-      </select>
-    </div>
-  </form>
+  <div class="container">
+    <row>
+      <form role="form">
+        <div class="col-sm-3 col-sm-offset-4 form-group">
+          <label for="Select">Your Fundraising Events</label>
+          <select id="Select" class="form-control">
+           <option>Select</option>
+         </select>
+       </div>
+     </form>
+     <div class="col-sm-offset-5"></div>
+   </row>
+ </div>
 
-  <h1>Tickets Sold: <span><?php echo $ticketssold;?></span></h1>
-  <h1>Money Sales: $<span><?php echo $moneysales;?></span></h1>
-  
+ <div class="container">
+  <row>
+    <h2 class="col-sm-offset-4">Tickets Sold: <span><?php echo $ticketssold;?></span></h2>
+    <h2 class="col-sm-offset-4">Money Sales: $<span><?php echo $moneysales;?></span></h2>
+  </row>
+</div>
 
 </body>
 
