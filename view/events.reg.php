@@ -5,9 +5,15 @@
 <html>
 <head>
  <title>RAFFLE</title>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script text="type/javascript" src="../inc/event_validate.js" charset="utf-8"></script>
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <style type="text/css">
+    .error {
+      color: red;
+    }
+  </style>
 </head>
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container">
@@ -31,7 +37,7 @@
 </nav>
 <h1 class="col-sm-offset-5"><b>Create Your Event</b></h1>
 
-<form class="form-horizontal" action="../controller/event.reg.controller.php" method="post">
+<form class="form-horizontal" id="event_registration" action="../controller/event.reg.controller.php" method="post">
 
   <br/>
   <div class="row">
@@ -39,21 +45,25 @@
     <div class="form-group center-block">
       <label class="col-sm-2 col-sm-offset-3 control-label">Event Name</label>
       <div class="col-sm-3">
-        <input type="text" name="name" value="" class="form-control" placeholder="Event Name">
+        <input type="text" name="name" id="event_name" value="" class="form-control" placeholder="Event Name">
+        <span id="event_name_error" class="error">Please enter the event name.</span>
       </div>
     </div>
 
     <div class="form-group center-block">
       <label class="col-sm-2 col-sm-offset-3 control-label">Max Tickets</label>
       <div class="col-sm-3">
-        <input type="text" class="form-control"  name="max" value="" placeholder="10"/>
+        <input type="text" class="form-control" id="max_tickets" name="max" value="" placeholder="10"/>
+        <span id="event_max_error" class="error">Please enter a valid max.</span>
       </div>
     </div>
 
     <div class="form-group center-block">
       <label  class="col-sm-2 col-sm-offset-3 control-label">Price</label>
       <div class="col-sm-3">
-        <input type="text" class="form-control"  name="price" placeholder="1.00"/>
+        <input type="text" class="form-control"  id="event_price" name="price" placeholder="1.00"/>
+        <span id="event_price_error" class="error">Please enter a price.</span>
+        <span id="event_price_invalid" class="error">Please enter a valid price.</span>
       </div>
     </div>
   </div>
@@ -61,14 +71,8 @@
   <div class="form-group center-block">
     <label class="col-sm-2 col-sm-offset-3 control-label">City</label>
     <div class="col-sm-3">
-      <input type="text" name="city" class="form-control" id="city" placeholder="East Lansing">
-    </div>
-  </div>
-
-  <div class="form-group center-block">
-    <label class="col-sm-2 col-sm-offset-3 control-label">Zip Code</label>
-    <div class="col-sm-3">
-      <input type="text" name="zip" class="form-control" placeholder="49685">
+      <input type="text" name="city" class="form-control" id="event_city" placeholder="East Lansing">
+        <span id="event_city_error" class="error">Please enter a city.</span>
     </div>
   </div>
 
@@ -131,18 +135,28 @@
     </div>
   </div>
 
+  <div class="form-group center-block">
+    <label class="col-sm-2 col-sm-offset-3 control-label">Zip Code</label>
+    <div class="col-sm-3">
+      <input type="text" name="zip" id="event_zip"  class="form-control" placeholder="49685">
+      <span id="event_zip_error" class="error">Please enter a zip code.</span>
+      <span id="event_zip_invalid" class="error">Please enter a valid 5 digit zip code.</span>
+    </div>
+  </div>
 
   <div class="form-group center-block">
     <label  class="col-sm-2 col-sm-offset-3 control-label">Start Date</label>
     <div class="col-xs-3">
-      <input type="text" class="form-control" name="start" placeholder="XX/XX/XXXX">
+      <input type="text" class="form-control" id="event_start" name="start" placeholder="XX/XX/XXXX">
+      <span id="event_date_error" class="error">Please enter both a start date and an end date.</span>
+      <span id="event_date_invalid" class="error">Please enter a valid start date and end date in the format MM/DD/YYYY.</span>
     </div>
   </div>
 
   <div class="form-group center-block">
     <label  class="col-sm-2 col-sm-offset-3 control-label">End Date</label>
     <div class="col-xs-3">
-      <input type="text" class="form-control" name="end" placeholder="XX/XX/XXXX">
+      <input type="text" class="form-control" id="event_end"  name="end" placeholder="XX/XX/XXXX">
     </div>
   </div>
 

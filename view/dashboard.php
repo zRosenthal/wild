@@ -58,10 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == $_GET) {
     </row>
     </div>
   }
-  else {
-
-  }
-  ?>
+?>
               
  <div class="container">
   <row>
