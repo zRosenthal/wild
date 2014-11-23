@@ -4,8 +4,8 @@
 
 <html lang="en">
   <head>
-  	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+          <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,8 +33,8 @@
           <ul class="nav navbar-nav">
             <li><a href="index.php">Home</a></li>
             <li><a href="view/account.reg.php">Account Creation</a></li>
-            <li><a href="#contact">Contact</a></li>
           </ul>
+          <button type="button" class="navbar-right btn btn-default navbar-btn">Sign in</button>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -43,10 +43,20 @@
 
     <div class="container">
 
-      <div class="starter-template">
+      <div class="text-center starter-template">
         <h1>Fifty Fifty Raffle</h1>
-        <p class="lead">Raffle your Fifty Fiftys<br> YAY</p>
       </div>
+
+      <form class="form-search">
+        <div class="input-append">
+          <label  class="col-sm-2 col-sm-offset-3 control-label">Search 50/50 Events</label>
+          <input type="text" class="span2 search-query">
+          <button type="submit" class="btn">Search</button>
+        </div>
+      </form>
+
+
+      <img src="NICCAGE.jpg" class="img-responsive" alt="Cinque Terre">
 
     </div><!-- /.container -->
 

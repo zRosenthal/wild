@@ -31,19 +31,26 @@
 </nav>
 
 <body>
-  <div class="container">
-    <row>
-      <form role="form">
-        <div class="col-sm-3 col-sm-offset-4 form-group">
-          <label for="Select">Your Fundraising Events</label>
-          <select id="Select" class="form-control">
-           <option>Select</option>
-         </select>
-       </div>
-     </form>
-     <div class="col-sm-offset-5"></div>
-   </row>
- </div>
+  <?php
+  if($login){
+    echo
+    <div class="container">
+      <row>
+        <form role="form">
+          <div class="col-sm-3 col-sm-offset-4 form-group">
+            <label for="Select">Your Fundraising Events</label>
+            <select id="Select" class="form-control">
+              <option>Select</option>
+            </select>
+          </div>
+        </form>
+      <div class="col-sm-offset-5"></div>
+      </row>
+    </div>
+  }
+  else{
+    echo $e_name
+  }
 
  <div class="container">
   <row>
