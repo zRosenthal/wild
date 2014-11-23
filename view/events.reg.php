@@ -8,18 +8,6 @@
  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
- <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker9').datetimepicker();
-            $('#datetimepicker10').datetimepicker();
-            $("#datetimepicker9").on("dp.change",function (e) {
-               $('#datetimepicker10').data("DateTimePicker").setMinDate(e.date);
-            });
-            $("#datetimepicker10").on("dp.change",function (e) {
-               $('#datetimepicker9').data("DateTimePicker").setMaxDate(e.date);
-            });
-        });
-    </script>
 </head>
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container">
@@ -38,7 +26,6 @@
         <li><a href="account.reg.php">Account Creation</a></li>
         <li><a href="dashboard.php">Dashboard</a></li>
       </ul>
-      <button type="button" class="navbar-right btn btn-default navbar-btn">Sign in</button>
     </div>
   </div>
 </nav>
@@ -185,6 +172,7 @@
         </select>
     </div>
   </div>
+
 
   <div class="row">
     <div class="col-sm-2 col-sm-offset-6 control-group">

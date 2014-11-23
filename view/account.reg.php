@@ -23,8 +23,8 @@
           <ul class="nav navbar-nav">
             <li><a href="../index.php">Home</a></li>
             <li><a href="account.reg.php">Account Creation</a></li>
-            <li><a href="#contact">Contact</a></li>
           </ul>
+          <button type="button" class="navbar-right btn btn-default navbar-btn">Sign in</button>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -69,17 +69,15 @@
               </div>
             </div>
 
-            <div class="col-sm-6 col-sm-offset-5 checkbox">
-              <label>
-                <input type="checkbox" value="paypal">
-                Paypal
-              </label>
-            </div>
-            <div class="col-sm-6 col-sm-offset-5 checkbox">
-              <label>
-                <input type="checkbox" value="venmo">
-                Venmo
-              </label>
+            <div class="form-group">
+              <label  class="col-sm-2 col-sm-offset-3 control-label">Payment Type(s)</label>
+              <div class="col-sm-1">
+                <select name="when" class="form-control">
+                  <option value="paypal">Paypal</option>
+                  <option value="venmo">Venmo</option>
+                  <option value="both">Both</option>
+                </select>
+              </div>
             </div>
 
 
@@ -87,7 +85,7 @@
               <div class="col-sm-6 col-sm-offset-5 control-group">
                 <div class="controls">
                   <br/>
-                  <a href="events.reg.php" class="btn btn-primary btn-lg active" role="button">Create Account</a>
+                  <button class="btn btn-primary btn-lg active" role="button">Create Account</button>
                 </div>
               </div>
             </div>
