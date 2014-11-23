@@ -104,23 +104,34 @@ class db
             return null;
         }
     }
-}
-/*
+
   // GETTERS AND SETTERS
   public function getDbc() {
     return $this->dbc;
   }
 
-    public function search($condition) {
-        $query = "SELECT * FROM  event WERE $condition";
-        $r = mysqli_query($this->dbc, $query);
-        if($r) {
-        while(mysqli_fetch_row($r)) {
-            $array[] =
-
-        }}
+    public function query($q) {
+        $r = mysqli_query($this->dbc, $q);
+        if ($r) {
+            return mysqli_fetch_row($r);
+        } else {
+            return null;
+        }
 
 
     }
+
+
+    public function search($condition) {
+        $query = "SELECT * FROM  event WHERE $condition";
+        $r = mysqli_query($this->dbc, $query);
+        if($r) {
+        while( $x = mysqli_fetch_row($r)) {
+            $array[] = $x;
+        }}
+    return $array;
+    }
+
+
 }
 
