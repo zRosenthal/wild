@@ -29,5 +29,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     echo $event_object->id;
 
         echo "end of controller </br>";
-    header("Location: ../view/dashboard.php");
+   // header("Location: ../view/dashboard.php");
 }

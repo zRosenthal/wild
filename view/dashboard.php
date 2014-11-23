@@ -1,4 +1,15 @@
 <?php
+if($_SERVER['REQUEST_METHOD'] == $_GET) {
+    $eventname = $_GET['name'];
+    $id = $_GET['id'];
+    $city = $_GET['city'];
+    $state = $_GET['state'];
+    $zip= $_GET['zip'];
+    $start_date = $_GET['start'];
+    $end_date = $_GET['end'];
+    $max_tickets = $_GET['max'];
+    $ticket_price = $_GET['price'];
+}
 
 ?>
 
@@ -47,8 +58,17 @@
     </row>
     </div>
   }
-  
-  
+  else {
+
+      echo"
+      <form method='post' action='../controller/venmo.controller.php'>
+      <input type="hidden" name='id' value='$id' />
+        
+      <input type="submit" name="submit"/>
+
+      </form>;"}
+
+?>
               
  <div class="container">
   <row>

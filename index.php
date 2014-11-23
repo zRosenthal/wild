@@ -70,6 +70,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
               <table class='table table-bordered'>
               <thead>
               <tr>
+                <th>#</th>
                 <th>Event Name</th>
                 <th>City</th>
                 <th>Start Date</th>
@@ -77,12 +78,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
               </tr>
             </thead>
             <tbody>";
+            $i = 0;
             foreach ($array as $val) {
               $i++;
-              if (i==3||i==4||i==6||i==7){
-                continue;
-              }
-              echo "<tr><td>$val[i]</td></tr>";
+              echo "<a href='dashboard.php/?id=val[0]&name=val[1]&city=val[2]&state=val[3]&start=val[6]&end=val[7]&max=val[8]&price=val[9]&account_id=val[10]";
+              echo "<tr><td>$i</td>$val[1]<td>$val[2]</td>$val[5]<td>$val[8]</td><td>$val[9]</td></tr></a>";
             }
          echo" </tbody>
           </table>
